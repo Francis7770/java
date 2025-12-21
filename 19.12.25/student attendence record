@@ -1,0 +1,18 @@
+class Solution {
+    public boolean checkRecord(String s) {
+        
+        int absentCount = 0;
+        int lateCount = 0;
+        
+        for(char letter : s.toCharArray()){
+            if(letter == 'A') absentCount ++;
+            if(letter == 'L') lateCount ++;
+            if(letter == 'A' || letter == 'P') lateCount = 0;
+            if(lateCount > 2) return false;
+        }
+        
+        
+        return absentCount <= 1;
+        
+    }
+}
